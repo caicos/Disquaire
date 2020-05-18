@@ -19,8 +19,8 @@ from django.urls import include, path
 from store import views
 
 urlpatterns = [
-    path('', views.index),
-    path('store/', include('store.urls')),
+    path('', views.index),                        # l'url "/store" va appeler la méthode index dans views.py
+    path('store/', include('store.urls', namespace = 'store')),
     path('admin/', admin.site.urls),
 ]
 
